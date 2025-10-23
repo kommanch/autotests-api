@@ -41,9 +41,9 @@ class CreateCourseRequestDict(TypedDict):
     createdByUserId: str
 
 
-class CreateCoursesResponseDict(TypedDict):
+class CreateCourseResponseDict(TypedDict):
     """
-    Описание структуры запроса на получение списка курсов.
+    Описание структуры ответа создания курса.
     """
     course: Course
 
@@ -111,7 +111,7 @@ class CoursesClient(APIClient):
         """
         return self.delete(f"/api/v1/courses/{course_id}")
 
-    def create_course(self, request: CreateCourseRequestDict) -> Course:
+    def create_course(self, request: CreateCourseRequestDict) -> CreateCourseResponseDict:
         response = self.create_course_api(request)
         return response.json()
 
