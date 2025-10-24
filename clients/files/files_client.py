@@ -12,7 +12,7 @@ class File(TypedDict):
     id: str
     filename: str
     directory: str
-    url: int
+    url: str
 
 
 class CreateFilesRequestDict(TypedDict):
